@@ -6,6 +6,10 @@ $secondary-color: #fff;
     align-items: center;
 }
 
+@mixin dropShadow() {
+    box-shadow: rgba(0, 0, 0, 0.20) 0px 3px 6px, rgba(0, 0, 0, 0.30) 0px 3px 6px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -15,12 +19,13 @@ $secondary-color: #fff;
 :root {
     font-size: 62.5%;
     height: 100%;
+    user-select: none;
 }
 
 body {
     @include flexCenter();
     width: 100%;
     height: 100%;
-    background-image: url(../images/game-background.webp);
+    background: url("../images/game-background.webp") no-repeat center / cover;
     backdrop-filter: blur(5px);
 }
