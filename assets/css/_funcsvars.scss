@@ -1,0 +1,14 @@
+$first-color: #662422;
+$second-color: #9c3c37;
+$third-color: #e9bf5c;
+$fourth-color: #aa8238;
+$fifth-color: #b5e3ea;
+@mixin flexCenter() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin dropShadow() {
+    box-shadow: rgba(0, 0, 0, 0.20) 0px 3px 6px, rgba(0, 0, 0, 0.30) 0px 3px 6px;
+}

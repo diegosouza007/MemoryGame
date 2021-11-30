@@ -1,19 +1,10 @@
-$primary-color: #000;
-$secondary-color: #fff;
-@mixin flexCenter() {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@mixin dropShadow() {
-    box-shadow: rgba(0, 0, 0, 0.20) 0px 3px 6px, rgba(0, 0, 0, 0.30) 0px 3px 6px;
-}
-
+@import 'funcsvars';
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
+    user-select: none;
 }
 
 :root {

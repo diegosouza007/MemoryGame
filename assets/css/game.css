@@ -3,6 +3,11 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 :root {
@@ -55,7 +60,7 @@ body {
 }
 
 #game-container a span {
-  color: #fff;
+  color: #b5e3ea;
   font-size: 4.5rem;
 }
 
@@ -119,4 +124,4 @@ body {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
 }
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=game.css.map */

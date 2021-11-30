@@ -1,0 +1,50 @@
+@import 'funcsvars';
+.home.active {
+    @include flexCenter();
+    display: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    min-width: 37rem;
+    div {
+        display: none;
+    }
+    #close {
+        @include flexCenter();
+        position: absolute;
+        top: 4.5rem, ;
+        right: 3.2rem;
+        font: bold 3.5rem 'Righteous', cursive;
+        color: $fifth-color;
+        padding: .2rem 1.5rem;
+        background: rgba(255, 255, 255, 0.1);
+        border: .1rem solid $fifth-color;
+        border-radius: 1.2rem;
+        transition: .2s ease-in;
+        &:hover {
+            cursor: pointer;
+            transition: ease-in-out;
+        }
+    }
+    ul {
+        @include flexCenter();
+        flex-direction: column;
+        width: 40rem;
+        height: 20rem;
+        list-style: none;
+        a {
+            appearance: none;
+            li {
+                font: 4rem 'Righteous', cursive;
+                color: $fifth-color;
+                cursor: pointer;
+                &:hover {
+                    color: $third-color;
+                    text-shadow: .1rem .1rem .1rem $second-color;
+                    list-style-image: url("../images/punch-favicon.png");
+                }
+            }
+        }
+    }
+}

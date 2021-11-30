@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- JavaScript -->
-    <script defer src="./assets/js/game.js"></script>
+    <!-- <script defer src="./assets/js/game.js"></script> -->
     <script defer src="./assets/js/interface.js"></script>
     <!-- CSS -->
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/game.css">
     <link rel="shortcut icon" href="./assets/images/punch-favicon.png" type="image/x-icon">
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -20,205 +20,18 @@
 <body>
 
     <div id="game-container">
+        <!-- Arrow Back - Home page -->
         <a href="index.html"><span class="material-icons">arrow_back</span></a>
+        <!-- Maximum 12 pairs (24 cards) -->
         <div id="card">
             <div id="front-card" class="card-square">
-                <img src="./assets/images/saitama-front.webp" alt="card">
+                <img src="./assets/images/cards/saitama-front.webp" alt="card">
             </div>
             <div id="back-card" class="card-square">
-                <img src="./assets/images/card-back.webp" alt="card">
-            </div>
-        </div>
-        <div id="card" class="flip">
-            <div id="front-card" class="card-square">
-                <img src="./assets/images/king-front.webp" alt="card">
-            </div>
-            <div id="back-card" class="card-square">
-                <img src="./assets/images/card-back.webp" alt="card">
-            </div>
-        </div>
-        <div id="card" class="flip">
-            <div id="front-card" class="card-square">
-                <img src="./assets/images/metalbat-front.webp" alt="card">
-            </div>
-            <div id="back-card" class="card-square">
-                <img src="./assets/images/card-back.webp" alt="card">
-            </div>
-        </div>
-        <div id="card" class="flip">
-            <div id="front-card" class="card-square">
-                <img src="./assets/images/tatsumaki-front.webp" alt="card">
-            </div>
-            <div id="back-card" class="card-square">
-                <img src="./assets/images/card-back.webp" alt="card">
-            </div>
-        </div>
-        <div id="card" class="flip">
-            <div id="front-card" class="card-square">
-                <img src="./assets/images/sonic-front.webp" alt="card">
-            </div>
-            <div id="back-card" class="card-square">
-                <img src="./assets/images/card-back.webp" alt="card">
-            </div>
-        </div>
-        <div id="card" class="flip">
-            <div id="front-card" class="card-square">
-                <img src="./assets/images/silverfang-front.webp" alt="card">
-            </div>
-            <div id="back-card" class="card-square">
-                <img src="./assets/images/card-back.webp" alt="card">
-            </div>
-        </div>
-        <div id="card">
-            <div id="front-card" class="card-square">
-                <img src="./assets/images/saitama-front.webp" alt="card">
-            </div>
-            <div id="back-card" class="card-square">
-                <img src="./assets/images/card-back.webp" alt="card">
-            </div>
-        </div>
-        <div id="card">
-            <div id="front-card" class="card-square">
-                <img src="./assets/images/saitama-front.webp" alt="card">
-            </div>
-            <div id="back-card" class="card-square">
-                <img src="./assets/images/card-back.webp" alt="card">
-            </div>
-        </div>
-        <div id="card">
-            <div id="front-card" class="card-square">
-                <img src="./assets/images/saitama-front.webp" alt="card">
-            </div>
-            <div id="back-card" class="card-square">
-                <img src="./assets/images/card-back.webp" alt="card">
-            </div>
-        </div>
-        <div id="card">
-            <div id="front-card" class="card-square">
-                <img src="./assets/images/saitama-front.webp" alt="card">
-            </div>
-            <div id="back-card" class="card-square">
-                <img src="./assets/images/card-back.webp" alt="card">
-            </div>
-        </div>
-        <div id="card">
-            <div id="front-card" class="card-square">
-                <img src="./assets/images/saitama-front.webp" alt="card">
-            </div>
-            <div id="back-card" class="card-square">
-                <img src="./assets/images/card-back.webp" alt="card">
-            </div>
-        </div>
-        <div id="card">
-            <div id="front-card" class="card-square">
-                <img src="./assets/images/saitama-front.webp" alt="card">
-            </div>
-            <div id="back-card" class="card-square">
-                <img src="./assets/images/card-back.webp" alt="card">
-            </div>
-        </div>
-        <div id="card">
-            <div id="front-card" class="card-square">
-                <img src="./assets/images/saitama-front.webp" alt="card">
-            </div>
-            <div id="back-card" class="card-square">
-                <img src="./assets/images/card-back.webp" alt="card">
-            </div>
-        </div>
-        <div id="card">
-            <div id="front-card" class="card-square">
-                <img src="./assets/images/saitama-front.webp" alt="card">
-            </div>
-            <div id="back-card" class="card-square">
-                <img src="./assets/images/card-back.webp" alt="card">
-            </div>
-        </div>
-        <div id="card">
-            <div id="front-card" class="card-square">
-                <img src="./assets/images/saitama-front.webp" alt="card">
-            </div>
-            <div id="back-card" class="card-square">
-                <img src="./assets/images/card-back.webp" alt="card">
-            </div>
-        </div>
-        <div id="card">
-            <div id="front-card" class="card-square">
-                <img src="./assets/images/saitama-front.webp" alt="card">
-            </div>
-            <div id="back-card" class="card-square">
-                <img src="./assets/images/card-back.webp" alt="card">
-            </div>
-        </div>
-        <div id="card">
-            <div id="front-card" class="card-square">
-                <img src="./assets/images/saitama-front.webp" alt="card">
-            </div>
-            <div id="back-card" class="card-square">
-                <img src="./assets/images/card-back.webp" alt="card">
-            </div>
-        </div>
-        <div id="card">
-            <div id="front-card" class="card-square">
-                <img src="./assets/images/saitama-front.webp" alt="card">
-            </div>
-            <div id="back-card" class="card-square">
-                <img src="./assets/images/card-back.webp" alt="card">
-            </div>
-        </div>
-        <div id="card">
-            <div id="front-card" class="card-square">
-                <img src="./assets/images/saitama-front.webp" alt="card">
-            </div>
-            <div id="back-card" class="card-square">
-                <img src="./assets/images/card-back.webp" alt="card">
-            </div>
-        </div>
-        <div id="card">
-            <div id="front-card" class="card-square">
-                <img src="./assets/images/saitama-front.webp" alt="card">
-            </div>
-            <div id="back-card" class="card-square">
-                <img src="./assets/images/card-back.webp" alt="card">
-            </div>
-        </div>
-        <div id="card">
-            <div id="front-card" class="card-square">
-                <img src="./assets/images/saitama-front.webp" alt="card">
-            </div>
-            <div id="back-card" class="card-square">
-                <img src="./assets/images/card-back.webp" alt="card">
-            </div>
-        </div>
-        <div id="card">
-            <div id="front-card" class="card-square">
-                <img src="./assets/images/saitama-front.webp" alt="card">
-            </div>
-            <div id="back-card" class="card-square">
-                <img src="./assets/images/card-back.webp" alt="card">
-            </div>
-        </div>
-        <div id="card">
-            <div id="front-card" class="card-square">
-                <img src="./assets/images/saitama-front.webp" alt="card">
-            </div>
-            <div id="back-card" class="card-square">
-                <img src="./assets/images/card-back.webp" alt="card">
-            </div>
-        </div>
-        <div id="card">
-            <div id="front-card" class="card-square">
-                <img src="./assets/images/saitama-front.webp" alt="card">
-            </div>
-            <div id="back-card" class="card-square">
-                <img src="./assets/images/card-back.webp" alt="card">
+                <img src="./assets/images/back-card.webp" alt="card">
             </div>
         </div>
     </div>
-
-    <script>
-        const card = document.querySelector('#card')
-        card.addEventListener('click', () => card.classList.toggle('flip'))
-    </script>
 
 </body>
 

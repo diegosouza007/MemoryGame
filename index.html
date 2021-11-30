@@ -9,8 +9,9 @@
     <script defer src="./assets/js/main.js"></script>
     <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/modal.css">
     <!-- Favicon -->
-    <link rel="shortcut icon" href="./assets/images/" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/images/punch-favicon.png" type="image/x-icon">
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,11 +22,33 @@
 
 <body>
 
-    <a id="button" href="game.html">
-        <div>
-            <p>PLAY</p>
-        </div>
-    </a>
+    <!-- Menu options -->
+    <div id="modal" class="home">
+        <!-- Theme sound -->
+        <audio id="music-theme" src="./assets/sounds/opm-ost.ogg"></audio>
+        <!--  Click sound -->
+        <audio id="click" src="./assets/sounds/click.ogg"></audio>
+        <!-- Play button -->
+        <a id="button" class="play">
+            <div>
+                <p>PLAY</p>
+            </div>
+        </a>
+        <!-- Close Button Menu Options -->
+        <span id="close">X</span>
+        <!-- Menu Options -->
+        <ul>
+            <a href="game.html">
+                <li id="new-game">New Game</li>
+            </a>
+            <a>
+                <li id="sound">Sound: <span id="music">OFF</span></li>
+            </a>
+            <a href="https://github.com/diegosouza007/MemoryGame">
+                <li id="about">About</li>
+            </a>
+        </ul>
+    </div>
 
 </body>
 
