@@ -64,7 +64,7 @@ body {
   font-size: 4.5rem;
 }
 
-#card {
+.cards {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -81,11 +81,11 @@ body {
   cursor: not-allowed;
 }
 
-#card:not(.flip) {
+.cards:not(.flip) {
   cursor: pointer;
 }
 
-#card:not(.flip) .card-square {
+.cards:not(.flip) .card-square {
   -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 6px, rgba(0, 0, 0, 0.3) 0px 3px 6px;
           box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 6px, rgba(0, 0, 0, 0.3) 0px 3px 6px;
 }
@@ -114,7 +114,7 @@ body {
   height: 100%;
 }
 
-#front-card {
+.front-card {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
   position: absolute;

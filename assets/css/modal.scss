@@ -39,6 +39,7 @@
                 font: 4rem 'Righteous', cursive;
                 color: $fifth-color;
                 cursor: pointer;
+                transition: ease-in-out .2s;
                 &:hover {
                     color: $third-color;
                     text-shadow: .1rem .1rem .1rem $second-color;

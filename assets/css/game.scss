@@ -18,7 +18,7 @@
     }
 }
 
-#card {
+.cards {
     @include flexCenter();
     transform-style: preserve-3d;
     transition: all .5s;
@@ -45,7 +45,7 @@
     }
 }
 
-#front-card {
+.front-card {
     transform: rotateY(180deg);
     position: absolute;
 }
