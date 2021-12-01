@@ -36,7 +36,7 @@ const CARDS = {
 }
 
 // Using Fisher–Yates Algorithm
-// Choose 12 random cards from CARDS to create pairs
+// Example: Choose 12 random cards from CARDS to create pairs
 
 function sortRandomPositions(lenght, maxLengt, array) {
 

@@ -18,6 +18,17 @@
     }
 }
 
+#card {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+
 .cards {
     @include flexCenter();
     transform-style: preserve-3d;
