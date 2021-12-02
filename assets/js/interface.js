@@ -3,6 +3,8 @@ const matchSound = document.getElementById('match-sound');
 const gameBoard = document.getElementById('game-board');
 const playAgain = document.getElementById('play-again');
 const winModal = document.getElementById('win-modal');
+const music = document.getElementById('music-theme');
+
 const FRONT_PATH = './assets/images/cards';
 const BACK_PATH = './assets/images/back-card.webp';
 let firstCard = null;
@@ -80,6 +82,8 @@ function flipCard(card) {
             if (checkWinner()) {
                 winModal.classList.add('active');
                 playAgain.addEventListener('click', () => restartGame());
+                music.play();
+                music.loop = true;
             }
         } else if (firstCard && secondCard !== null) {
             setTimeout(() => {
