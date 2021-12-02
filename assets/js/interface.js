@@ -4,7 +4,7 @@ const FRONT_PATH = './assets/images/cards';
 const BACK_PATH = './assets/images/back-card.webp';
 let firstCard = null;
 let secondCard = null;
-let lockedMode = true;
+let lockMode = false;
 let cards;
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -67,42 +67,66 @@ function addEventListennersToCards() {
 
 function flipCard(card) {
 
-    cards.filter(element => {
-        if (element.id === card.id) {
-            element.flipped = true;
+    if (setCard(card.id)) {
+
+        card.classList.add('flip');
+        flipSound.play();
+
+        if (isMatchCardPair()) {
+            matchSound.play();
+            clearCards();
+            if (checkWinner()) {
+                console.log("Você venceu!")
+            }
+        } else if (firstCard && secondCard !== null) {
+            setTimeout(() => {
+                unFlipCard(firstCard);
+                unFlipCard(secondCard);
+                clearCards();
+            }, 1000);
         }
-    })
-
-    if (firstCard && secondCard !== null) {
-        firstCard = null;
-        secondCard = null;
-    }
-
-    firstCard === null ? firstCard = card : secondCard = card;
-
-
-
-    card.classList.add('flip');
-    flipSound.play();
-
-    if (isMatchCardPair()) {
-        console.log("temos um par");
-        matchSound.play();
-    } else if (firstCard && secondCard !== null) {
-        setTimeout(() => {
-            unFlipCard(firstCard);
-            unFlipCard(secondCard);
-        }, 1000);
     }
 }
 
-function unFlipCard(card) {
+function clearCards() {
+    firstCard = null;
+    secondCard = null;
+    lockMode = false;
+}
 
-    card.classList.remove('flip');
+function setCard(cardId) {
 
-    cards.filter(element => {
-        if (element.id === card.id) {
-            element.flipped = false;
+    let card = cards.filter(card => card.id === cardId)[0];
+
+    if (card.flipped || lockMode) {
+        return false;
+    }
+
+    if (!firstCard) {
+        firstCard = card;
+        firstCard.flipped = true;
+        return true;
+    } else {
+        secondCard = card;
+        secondCard.flipped = true;
+        lockMode = true;
+        return true;
+    }
+}
+
+function unFlipCard(cardObject) {
+
+    let cardsElement = document.querySelectorAll('.cards');
+
+    cardsElement.forEach(card => {
+        if (card.getAttribute('id') === cardObject.id) {
+            card.classList.remove('flip');
+        }
+    });
+
+    cards.filter(card => {
+        if (card.id === cardObject.id) {
+            card.flipped = false;
         }
     })
 }
@@ -110,10 +134,15 @@ function unFlipCard(card) {
 function isMatchCardPair() {
 
     if (firstCard && secondCard !== null) {
-        if (firstCard.firstChild.getAttribute('data-icon') === secondCard.firstChild.getAttribute('data-icon')) {
+
+        if (firstCard.dataicon === secondCard.dataicon) {
             return true;
         } else {
             return false;
         }
     }
+}
+
+function checkWinner() {
+    return cards.every(card => card.flipped === true);
 }

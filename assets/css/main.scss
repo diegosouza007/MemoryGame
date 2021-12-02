@@ -21,6 +21,7 @@ body {
                 height: 100%;
                 width: 100%;
                 background: url("../images/play.webp") no-repeat center / contain;
+                filter: drop-shadow(0 0 2rem $third-color);
                 p {
                     left: 34%;
                     position: absolute;
