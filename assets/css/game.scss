@@ -1,5 +1,6 @@
 @import 'base';
-#game-container {
+@import 'winmodal';
+#game-board {
     display: grid;
     align-items: center;
     justify-content: center;
@@ -7,14 +8,15 @@
     grid-template-rows: repeat(3, 1fr);
     gap: 1.8rem;
     padding: .5rem;
-    a {
-        position: absolute;
-        left: 2.5rem;
-        top: 2.5rem;
-        span {
-            color: $fifth-color;
-            font-size: 4.5rem
-        }
+}
+
+#back {
+    position: absolute;
+    left: 2.5rem;
+    top: 2.5rem;
+    span {
+        color: $fifth-color;
+        font-size: 4.5rem;
     }
 }
 

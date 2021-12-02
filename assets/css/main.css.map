@@ -5,7 +5,7 @@
         "main.scss",
         "_base.scss",
         "_funcsvars.scss",
-        "modal.scss",
+        "_modal.scss",
         "_funcsvars.scss",
         "_funcsvars.scss"
     ],

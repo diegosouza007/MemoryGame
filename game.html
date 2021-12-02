@@ -13,22 +13,26 @@
     <link rel="shortcut icon" href="./assets/images/punch-favicon.png" type="image/x-icon">
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
     <!-- Page title -->
     <title>Memory Game - New Game</title>
 </head>
 
 <body>
 
-    <div id="game-container">
+    <!-- Match sound -->
+    <audio id="match-sound" src="./assets/sounds/ok.ogg"></audio>
 
-        <!-- Match sound -->
-        <audio id="match-sound" src="./assets/sounds/ok.ogg"></audio>
+    <!-- Flip sound -->
+    <audio id="flip-sound" src="./assets/sounds/flip.ogg"></audio>
 
-        <!-- Flip sound -->
-        <audio id="flip-sound" src="./assets/sounds/flip.ogg"></audio>
+    <!-- Arrow Back - Home page -->
+    <a id="back" title="Back to home" href="index.html"><span class="material-icons">arrow_back</span></a>
 
-        <!-- Arrow Back - Home page -->
-        <a title="Back to home" href="index.html"><span class="material-icons">arrow_back</span></a>
+    <div id="game-board">
 
         <!-- Maximum 12 pairs (24 cards) -->
         <div id="card" class="cards">
@@ -42,6 +46,14 @@
 
     </div>
 
+    <!-- Winner Modal -->
+
+    <div id="win-modal" class="winner-modal">
+        <div class="content">
+            <p>Congratulations, you win!!!</p>
+            <span id="play-again">Play again</span>
+        </div>
+    </div>
 </body>
 
 </html>

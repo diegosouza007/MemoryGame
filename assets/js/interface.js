@@ -1,5 +1,8 @@
 const flipSound = document.getElementById('flip-sound');
 const matchSound = document.getElementById('match-sound');
+const gameBoard = document.getElementById('game-board');
+const playAgain = document.getElementById('play-again');
+const winModal = document.getElementById('win-modal');
 const FRONT_PATH = './assets/images/cards';
 const BACK_PATH = './assets/images/back-card.webp';
 let firstCard = null;
@@ -8,14 +11,12 @@ let lockMode = false;
 let cards;
 
 document.addEventListener('DOMContentLoaded', () => {
-    cards = generateCardsData();
     startGame();
-    setTimeout(() => addEventListennersToCards(), 30);
 })
 
 function startGame() {
 
-    const gameBoard = document.getElementById('game-container');
+    cards = generateCardsData();
 
     for (let card of cards) {
 
@@ -52,6 +53,7 @@ function startGame() {
         cardElement.appendChild(backCardElement);
         gameBoard.appendChild(cardElement);
     }
+    addEventListennersToCards();
 }
 
 function addEventListennersToCards() {
@@ -76,7 +78,8 @@ function flipCard(card) {
             matchSound.play();
             clearCards();
             if (checkWinner()) {
-                console.log("Você venceu!")
+                winModal.classList.add('active');
+                playAgain.addEventListener('click', () => restartGame());
             }
         } else if (firstCard && secondCard !== null) {
             setTimeout(() => {
@@ -145,4 +148,8 @@ function isMatchCardPair() {
 
 function checkWinner() {
     return cards.every(card => card.flipped === true);
+}
+
+function restartGame() {
+    window.location.reload();
 }

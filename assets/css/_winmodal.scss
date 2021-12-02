@@ -1,0 +1,43 @@
+@import 'base';
+@import 'funcsvars';
+.winner-modal {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.winner-modal.active {
+    @include flexCenter();
+    visibility: unset;
+    opacity: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(.2rem);
+    .content {
+        position: relative;
+        @include flexCenter();
+        flex-direction: column;
+        p {
+            color: $third-color;
+            text-shadow: .1rem .1rem .1rem $second-color;
+            margin-bottom: 6.5rem;
+            font: 5rem 'Righteous', cursive;
+        }
+        #play-again {
+            position: absolute;
+            color: $fifth-color;
+            background: $second-color;
+            padding: 1rem 2rem;
+            font: 1.5rem 'Righteous', cursive;
+            border-radius: .5rem;
+            cursor: pointer;
+            transition: .2s ease-in;
+            bottom: 0;
+            &:hover {
+                font-size: 1.6rem;
+                filter: brightness(1.2);
+            }
+        }
+    }
+}
