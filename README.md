@@ -2,8 +2,8 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/made%20by-DIEGO%20SOUZA-9c3c37?style=flat-square">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/diegosouza007/JogoDaVelha?color=9c3c37&style=flat-square">
-  <img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/diegosouza007/JogoDaVelha?color=9c3c37&style=flat-square">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/diegosouza007/MemoryGame?color=9c3c37&style=flat-square">
+  <img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/diegosouza007/MemoryGame?color=9c3c37&style=flat-square">
   <a href="https://opensource.org/licenses/MIT">
     <img alt="License" src="https://img.shields.io/badge/license-MIT-9c3c37?style=flat-square">
   </a>
