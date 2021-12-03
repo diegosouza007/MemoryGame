@@ -1,45 +1,52 @@
 @import 'base';
 @import 'winmodal';
-#game-board {
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 1.8rem;
-    padding: .5rem;
+body {
+    background: url("../images/game-background.webp") no-repeat center / cover;
+    backdrop-filter: blur(5px);
 }
 
-#back {
-    position: absolute;
-    left: 2.5rem;
-    top: 2.5rem;
-    span {
-        color: $fifth-color;
-        font-size: 4.5rem;
-    }
-}
-
-#card {
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 1px;
-    height: 1px;
-    overflow: hidden
-}
-
-.cards {
+#content {
     @include flexCenter();
-    transform-style: preserve-3d;
-    transition: all .5s;
-    cursor: not-allowed;
-    &:not(.flip) {
-        cursor: pointer;
-        .card-square {
-            @include dropShadow();
+    width: 100vw;
+    height: 100vh;
+    #back {
+        position: absolute;
+        left: 2.5rem;
+        top: 2.5rem;
+        span {
+            color: $fifth-color;
+            font-size: 4.5rem;
+        }
+    }
+    #game-board {
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 1.8rem;
+        padding: .5rem;
+        #card {
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+        .cards {
+            @include flexCenter();
+            transform-style: preserve-3d;
+            transition: all .5s;
+            cursor: not-allowed;
+            &:not(.flip) {
+                cursor: pointer;
+                .card-square {
+                    @include dropShadow();
+                }
+            }
         }
     }
 }
@@ -65,4 +72,53 @@
 
 .flip {
     transform: rotateY(180deg);
+}
+
+@media screen and (max-width: 1140px) {
+    #game-board {
+        grid-template-columns: repeat(6, 1fr);
+    }
+    .card-square {
+        width: 10rem;
+        height: 15rem;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    #back {
+        display: none;
+    }
+    #content {
+        #game-board {
+            grid-template-columns: repeat(6, 1fr);
+        }
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .card-square {
+        width: 8rem;
+        height: 12rem;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    #content {
+        #game-board {
+            gap: 1.5rem;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+        }
+    }
+    .card-square {
+        width: 7rem;
+        height: 10rem;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .card-square {
+        width: 6rem;
+        height: 8rem;
+    }
 }

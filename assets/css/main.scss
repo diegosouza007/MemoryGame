@@ -1,49 +1,59 @@
+@import 'funcsvars';
 @import 'base';
 @import 'modal';
-@import 'funcsvars';
-body {
-    display: flex;
+#content {
+    @include flexCenter();
     justify-content: flex-end;
+    width: 100vw;
+    height: 100vh;
     background: url("../images/main-background.webp") no-repeat center / cover;
-    backdrop-filter: none;
-    min-width: 37rem;
-    .home:not(.active) {
-        a {
+    #play {
+        @include flexCenter();
+        width: 30rem;
+        height: 19.8rem;
+        margin-right: 5.5rem;
+        transition: .2s ease-in;
+        button {
             @include flexCenter();
-            width: 30rem;
-            height: 19.8rem;
-            margin-right: 5.5rem;
-            transition: .2s ease-in;
-            div {
-                position: relative;
-                @include flexCenter();
-                margin: .2rem;
-                height: 100%;
-                width: 100%;
-                background: url("../images/play.webp") no-repeat center / contain;
-                filter: drop-shadow(0 0 2rem $third-color);
-                p {
-                    left: 34%;
-                    position: absolute;
-                    transform: scaleX(3rem);
-                    font-size: 3rem;
-                    color: $second-color;
-                    right: 2rem;
-                    font-family: 'Righteous', cursive;
-                }
-            }
-            &:hover {
-                width: 31rem;
-                height: 20.5rem;
-                transition: ease-in-out;
-                filter: brightness(1.3);
+            position: relative;
+            margin: .2rem;
+            height: 100%;
+            width: 100%;
+            background: url("../images/play.webp") no-repeat center / contain;
+            filter: drop-shadow(0 0 2rem $third-color);
+            cursor: pointer;
+            p {
+                left: 2%;
+                position: absolute;
+                font: 3rem 'Righteous', cursive;
+                color: $second-color;
+                right: 2rem;
             }
         }
-        ul {
-            display: none;
+        &:hover {
+            width: 31rem;
+            height: 20.5rem;
+            transition: ease-in-out;
+            filter: brightness(1.3);
         }
-        span {
-            display: none;
+    }
+}
+
+.home:not(.active) {
+    #modal {
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
+@media (max-width: 970px) {
+    #content {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        #play {
+            margin: 0;
         }
     }
 }

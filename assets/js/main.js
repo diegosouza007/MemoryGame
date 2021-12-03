@@ -1,8 +1,8 @@
 const ELEMENTS = {
-    modal: document.getElementById('modal'),
+    modal: document.getElementById('content'),
     music: document.getElementById('music'),
     buttons: {
-        play: document.querySelector('.play'),
+        play: document.getElementById('play'),
         newGame: document.getElementById('new-game'),
         sound: document.getElementById('sound'),
         about: document.getElementById('about'),

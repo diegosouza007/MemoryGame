@@ -21,35 +21,33 @@
 </head>
 
 <body>
-
-    <!-- Menu options -->
-    <div id="modal" class="home">
-        <!-- Theme sound -->
-        <audio id="music-theme" src="./assets/sounds/opm-ost.ogg"></audio>
-        <!--  Click sound -->
-        <audio id="click" src="./assets/sounds/click.ogg"></audio>
-        <!-- Play button -->
-        <a id="button" class="play">
-            <div>
+    <!-- Page content -->
+    <div id="content" class="home">
+        <!-- Play Button -->
+        <a id="play" class="button">
+            <button>
                 <p>PLAY</p>
-            </div>
+            </button>
         </a>
-        <!-- Close Button Menu Options -->
-        <span id="close">X</span>
-        <!-- Menu Options -->
-        <ul>
-            <a href="game.html">
-                <li id="new-game">New Game</li>
-            </a>
-            <a>
-                <li id="sound">Sound: <span id="music">OFF</span></li>
-            </a>
-            <a href="https://github.com/diegosouza007/MemoryGame">
-                <li id="about">About</li>
-            </a>
-        </ul>
+        <!-- Modal - Menu options -->
+        <div id="modal">
+            <span id="close">X</span>
+            <ul>
+                <a href="game.html">
+                    <li id="new-game">New Game</li>
+                </a>
+                <a>
+                    <li id="sound">Sound: <span id="music">OFF</span></li>
+                </a>
+                <a href="https://github.com/diegosouza007/MemoryGame">
+                    <li id="about">About</li>
+                </a>
+            </ul>
+        </div>
     </div>
-
+    <!-- Sounds -->
+    <audio id="music-theme" src="./assets/sounds/opm-ost.ogg"></audio>
+    <audio id="click" src="./assets/sounds/click.ogg"></audio>
 </body>
 
 </html>

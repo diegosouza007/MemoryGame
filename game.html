@@ -23,40 +23,36 @@
 
 <body>
 
-    <!-- Theme sound -->
+    <div id="content">
+        <!-- Back to home page -->
+        <a id="back" title="Back to home" href="index.html"><span class="material-icons">arrow_back</span></a>
+
+        <div id="game-board">
+
+            <!-- Maximum 12 pairs (24 cards): Model -->
+            <div id="card" class="cards">
+                <div class="front-card card-square" data-icon="saitama">
+                    <img src="./assets/images/cards/saitama.webp">
+                </div>
+                <div class="back-card card-square">
+                    <img src="./assets/images/back-card.webp">
+                </div>
+            </div>
+        </div>
+
+        <!-- Winner Modal -->
+        <div id="win-modal" class="winner-modal">
+            <div class="content">
+                <p>Congratulations, you win!!!</p>
+                <span id="play-again">Play again</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sounds -->
     <audio id="music-theme" src="./assets/sounds/opm-ost.ogg"></audio>
-
-    <!-- Match sound -->
     <audio id="match-sound" src="./assets/sounds/ok.ogg"></audio>
-
-    <!-- Flip sound -->
     <audio id="flip-sound" src="./assets/sounds/flip.ogg"></audio>
-
-    <!-- Arrow Back - Home page -->
-    <a id="back" title="Back to home" href="index.html"><span class="material-icons">arrow_back</span></a>
-
-    <div id="game-board">
-
-        <!-- Maximum 12 pairs (24 cards) -->
-        <div id="card" class="cards">
-            <div class="front-card card-square" data-icon="saitama">
-                <img src="./assets/images/cards/saitama.webp">
-            </div>
-            <div class="back-card card-square">
-                <img src="./assets/images/back-card.webp">
-            </div>
-        </div>
-
-    </div>
-
-    <!-- Winner Modal -->
-
-    <div id="win-modal" class="winner-modal">
-        <div class="content">
-            <p>Congratulations, you win!!!</p>
-            <span id="play-again">Play again</span>
-        </div>
-    </div>
 </body>
 
 </html>

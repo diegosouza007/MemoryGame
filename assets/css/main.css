@@ -8,35 +8,28 @@
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
 }
 
 :root {
   font-size: 62.5%;
-  height: 100%;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
-body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-  height: 100%;
-  background: url("../images/game-background.webp") no-repeat center/cover;
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
+.home.active #play {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
 }
 
-.home.active {
+.home.active #modal {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -47,19 +40,18 @@ body {
       -ms-flex-align: center;
           align-items: center;
   display: absolute;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background: rgba(0, 0, 0, 0.2);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
-  min-width: 37rem;
 }
 
-.home.active div {
+.home.active #modal div {
   display: none;
 }
 
-.home.active #close {
+.home.active #modal #close {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -82,13 +74,13 @@ body {
   transition: .2s ease-in;
 }
 
-.home.active #close:hover {
+.home.active #modal #close:hover {
   cursor: pointer;
   -webkit-transition: ease-in-out;
   transition: ease-in-out;
 }
 
-.home.active ul {
+.home.active #modal ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -107,13 +99,13 @@ body {
   list-style: none;
 }
 
-.home.active ul a {
+.home.active #modal ul a {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
 }
 
-.home.active ul a li {
+.home.active #modal ul a li {
   font: 4rem 'Righteous', cursive;
   color: #b5e3ea;
   cursor: pointer;
@@ -121,26 +113,31 @@ body {
   transition: ease-in-out .2s;
 }
 
-.home.active ul a li:hover {
+.home.active #modal ul a li:hover {
   color: #e9bf5c;
   text-shadow: 0.1rem 0.1rem 0.1rem #9c3c37;
   list-style-image: url("../images/punch-favicon.png");
 }
 
-body {
+#content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  width: 100vw;
+  height: 100vh;
   background: url("../images/main-background.webp") no-repeat center/cover;
-  -webkit-backdrop-filter: none;
-          backdrop-filter: none;
-  min-width: 37rem;
 }
 
-body .home:not(.active) a {
+#content #play {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -157,8 +154,7 @@ body .home:not(.active) a {
   transition: .2s ease-in;
 }
 
-body .home:not(.active) a div {
-  position: relative;
+#content #play button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -168,26 +164,25 @@ body .home:not(.active) a div {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
   margin: .2rem;
   height: 100%;
   width: 100%;
   background: url("../images/play.webp") no-repeat center/contain;
   -webkit-filter: drop-shadow(0 0 2rem #e9bf5c);
           filter: drop-shadow(0 0 2rem #e9bf5c);
+  cursor: pointer;
 }
 
-body .home:not(.active) a div p {
-  left: 34%;
+#content #play button p {
+  left: 2%;
   position: absolute;
-  -webkit-transform: scaleX(3rem);
-          transform: scaleX(3rem);
-  font-size: 3rem;
+  font: 3rem 'Righteous', cursive;
   color: #9c3c37;
   right: 2rem;
-  font-family: 'Righteous', cursive;
 }
 
-body .home:not(.active) a:hover {
+#content #play:hover {
   width: 31rem;
   height: 20.5rem;
   -webkit-transition: ease-in-out;
@@ -196,11 +191,26 @@ body .home:not(.active) a:hover {
           filter: brightness(1.3);
 }
 
-body .home:not(.active) ul {
-  display: none;
+.home:not(.active) #modal {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
 }
 
-body .home:not(.active) span {
-  display: none;
+@media (max-width: 970px) {
+  #content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  #content #play {
+    margin: 0;
+  }
 }
 /*# sourceMappingURL=main.css.map */
