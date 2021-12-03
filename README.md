@@ -25,7 +25,7 @@ This game has 32 characters and each game match is drawn randomly 12 cards to cr
 
 ## Project Preview
 
-<img src="./assets/images/preview-desktop.webp">
-<img src="./assets/images/preview-mobile.webp">
+<img src="preview-desktop.png">
+<img src="preview-mobile.png">
 
 Preview link: <a href="https://diegosouza007.github.io/MemoryGame">https://diegosouza007.github.io/MemoryGame</a>

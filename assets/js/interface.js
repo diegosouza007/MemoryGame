@@ -5,6 +5,8 @@ const playAgain = document.getElementById('play-again');
 const winModal = document.getElementById('win-modal');
 const music = document.getElementById('music-theme');
 
+let cards;
+
 document.addEventListener('DOMContentLoaded', () => {
     startGame();
 })

@@ -1,11 +1,9 @@
 const game = {
-
     FRONT_PATH: './assets/images/cards',
     BACK_PATH: './assets/images/back-card.webp',
     firstCard: null,
     secondCard: null,
     lockMode: false,
-    cards: [],
     characters: [
         'atomicsamurai',
         'blast',
