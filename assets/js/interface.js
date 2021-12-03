@@ -5,20 +5,13 @@ const playAgain = document.getElementById('play-again');
 const winModal = document.getElementById('win-modal');
 const music = document.getElementById('music-theme');
 
-const FRONT_PATH = './assets/images/cards';
-const BACK_PATH = './assets/images/back-card.webp';
-let firstCard = null;
-let secondCard = null;
-let lockMode = false;
-let cards;
-
 document.addEventListener('DOMContentLoaded', () => {
     startGame();
 })
 
 function startGame() {
 
-    cards = generateCardsData();
+    cards = game.generateCardsData();
 
     for (let card of cards) {
 
@@ -36,7 +29,7 @@ function startGame() {
         frontCardElement.dataset.icon = card.dataicon;
 
         imageFrontCard = document.createElement('img');
-        imageFrontCard.src = `${FRONT_PATH}/${card.dataicon}.webp`;
+        imageFrontCard.src = `${game.FRONT_PATH}/${card.dataicon}.webp`;
 
         // Back Card Element
 
@@ -45,7 +38,7 @@ function startGame() {
         backCardElement.classList.add("card-square");
 
         imageBackCard = document.createElement('img');
-        imageBackCard.src = BACK_PATH;
+        imageBackCard.src = game.BACK_PATH;
 
         // Adding Elements to HTML page
 
@@ -71,53 +64,27 @@ function addEventListennersToCards() {
 
 function flipCard(card) {
 
-    if (setCard(card.id)) {
+    if (game.setCard(card.id)) {
 
         card.classList.add('flip');
         flipSound.play();
 
-        if (isMatchCardPair()) {
+        if (game.isMatchCardPair()) {
             matchSound.play();
-            clearCards();
-            if (checkWinner()) {
+            game.clearCards();
+            if (game.checkWinner()) {
                 winModal.classList.add('active');
                 playAgain.addEventListener('click', () => restartGame());
                 music.play();
                 music.loop = true;
             }
-        } else if (firstCard && secondCard !== null) {
+        } else if (game.firstCard && game.secondCard !== null) {
             setTimeout(() => {
-                unFlipCard(firstCard);
-                unFlipCard(secondCard);
-                clearCards();
+                unFlipCard(game.firstCard);
+                unFlipCard(game.secondCard);
+                game.clearCards();
             }, 1000);
         }
-    }
-}
-
-function clearCards() {
-    firstCard = null;
-    secondCard = null;
-    lockMode = false;
-}
-
-function setCard(cardId) {
-
-    let card = cards.filter(card => card.id === cardId)[0];
-
-    if (card.flipped || lockMode) {
-        return false;
-    }
-
-    if (!firstCard) {
-        firstCard = card;
-        firstCard.flipped = true;
-        return true;
-    } else {
-        secondCard = card;
-        secondCard.flipped = true;
-        lockMode = true;
-        return true;
     }
 }
 
@@ -136,22 +103,6 @@ function unFlipCard(cardObject) {
             card.flipped = false;
         }
     })
-}
-
-function isMatchCardPair() {
-
-    if (firstCard && secondCard !== null) {
-
-        if (firstCard.dataicon === secondCard.dataicon) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-}
-
-function checkWinner() {
-    return cards.every(card => card.flipped === true);
 }
 
 function restartGame() {

@@ -1,4 +1,11 @@
-const CARDS = {
+const game = {
+
+    FRONT_PATH: './assets/images/cards',
+    BACK_PATH: './assets/images/back-card.webp',
+    firstCard: null,
+    secondCard: null,
+    lockMode: false,
+    cards: [],
     characters: [
         'atomicsamurai',
         'blast',
@@ -33,62 +40,104 @@ const CARDS = {
         'watchdog',
         'zombieman',
     ],
-}
 
-// Using Fisher–Yates Algorithm
-// Example: Choose 12 random cards from CARDS to create pairs
+    shufflePositions: function(lenght, maxLengt, array) {
 
-function sortRandomPositions(lenght, maxLengt, array) {
+        let num = [];
 
-    let num = [];
+        let max = lenght;
+        let results = maxLengt;
 
-    let max = lenght;
-    let results = maxLengt;
+        let i, arr = [];
+        for (i = 0; i < max; i++) {
+            arr[i] = i;
+        }
 
-    let i, arr = [];
-    for (i = 0; i < max; i++) {
-        arr[i] = i;
-    }
+        let p, n, tmp;
+        for (p = arr.length; p;) {
+            n = Math.random() * p-- | 0;
+            tmp = arr[n];
+            arr[n] = arr[p];
+            arr[p] = tmp;
+        }
 
-    let p, n, tmp;
-    for (p = arr.length; p;) {
-        n = Math.random() * p-- | 0;
-        tmp = arr[n];
-        arr[n] = arr[p];
-        arr[p] = tmp;
-    }
+        for (let i = 0; i < results; i++) {
+            num.push(array[[arr[i]]]);
+        }
 
-    for (let i = 0; i < results; i++) {
-        num.push(array[[arr[i]]]);
-    }
+        return num;
+    },
 
-    return num;
-}
+    createPairsCards: function(character) {
 
-function createPairsCards(character) {
+        return [{
+            id: character + this.genId(),
+            dataicon: character,
+            flipped: false,
+        }, {
+            id: character + this.genId(),
+            dataicon: character,
+            flipped: false,
+        }]
+    },
 
-    return [{
-        id: character + parseInt(Math.random() * 1000),
-        dataicon: character,
-        flipped: false,
-    }, {
-        id: character + parseInt(Math.random() * 1000),
-        dataicon: character,
-        flipped: false,
-    }]
-}
+    genId: function() {
+        return parseInt(Math.random() * 1000);
+    },
 
-function generateCardsData() {
+    generateCardsData: function() {
 
-    let length = Object.keys(CARDS.characters).length;
-    let oldCards = sortRandomPositions(length, 12, CARDS.characters);
-    let newCards = [];
+        let length = this.characters.length;
+        let tmpCards = this.shufflePositions(length, 12, this.characters);
+        let newCards = [];
 
-    for (let character of oldCards) {
-        newCards.push(createPairsCards(character));
-    }
+        for (let character of tmpCards) {
+            newCards.push(this.createPairsCards(character));
+        }
 
-    let cards = sortRandomPositions(24, 24, newCards.flat());
+        let cards = this.shufflePositions(24, 24, newCards.flat());
 
-    return cards;
+        return cards;
+    },
+
+    setCard: function(cardId) {
+
+        let card = cards.filter(card => card.id === cardId)[0];
+
+        if (card.flipped || this.lockMode) {
+            return false;
+        }
+
+        if (!this.firstCard) {
+            this.firstCard = card;
+            this.firstCard.flipped = true;
+            return true;
+        } else {
+            this.secondCard = card;
+            this.secondCard.flipped = true;
+            this.lockMode = true;
+            return true;
+        }
+    },
+
+    checkWinner: function() {
+        return cards.every(card => card.flipped === true);
+    },
+
+    isMatchCardPair: function() {
+
+        if (this.firstCard && this.secondCard !== null) {
+            if (this.firstCard.dataicon === this.secondCard.dataicon) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    },
+
+    clearCards: function() {
+        this.firstCard = null;
+        this.secondCard = null;
+        this.lockMode = false;
+    },
 }
