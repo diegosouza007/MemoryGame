@@ -40,12 +40,14 @@ body {
             @include flexCenter();
             transform-style: preserve-3d;
             transition: all .5s;
-            cursor: not-allowed;
             &:not(.flip) {
                 cursor: pointer;
                 .card-square {
                     @include dropShadow();
                 }
+            }
+            .back-card {
+                backface-visibility: hidden;
             }
         }
     }
@@ -72,6 +74,7 @@ body {
 
 .flip {
     transform: rotateY(180deg);
+    cursor: not-allowed;
 }
 
 @media screen and (max-width: 1140px) {

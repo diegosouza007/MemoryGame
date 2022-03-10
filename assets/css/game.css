@@ -203,7 +203,6 @@ body {
           transform-style: preserve-3d;
   -webkit-transition: all .5s;
   transition: all .5s;
-  cursor: not-allowed;
 }
 
 #content #game-board .cards:not(.flip) {
@@ -213,6 +212,11 @@ body {
 #content #game-board .cards:not(.flip) .card-square {
   -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 6px, rgba(0, 0, 0, 0.3) 0px 3px 6px;
           box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 6px, rgba(0, 0, 0, 0.3) 0px 3px 6px;
+}
+
+#content #game-board .cards .back-card {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 .card-square {
@@ -248,6 +252,7 @@ body {
 .flip {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
+  cursor: not-allowed;
 }
 
 @media screen and (max-width: 1140px) {
